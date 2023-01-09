@@ -1,20 +1,28 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import Register from './src/screens/Register';
+import Login from './src/screens/Login';
+import ForgotPassword from './src/screens/ForgotPassword';
+import ResetPassword from './src/screens/ResetPassword';
+import HomeBeforeLogin from './src/screens/HomeBeforeLogin';
+import HomeAfterLogin from './src/screens/HomeAfterLogin';
+import ListMovie from './src/screens/ListMovie';
+import MovieDetail from './src/screens/MovieDetail';
+import Order from './src/screens/Order';
+import Payment from './src/screens/Payment';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+   <>
+      {/* <Register/> */}
+      {/* <Login/> */}
+      {/* <ForgotPassword /> */}
+      {/* <ResetPassword /> */}
+      {/* <HomeBeforeLogin /> */}
+      {/* <HomeAfterLogin /> */}
+      {/* <ListMovie /> */}
+      {/* <MovieDetail /> */}
+      {/* <Order /> */}
+      <Payment />
+   </>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
