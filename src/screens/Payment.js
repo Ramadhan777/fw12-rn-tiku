@@ -8,6 +8,13 @@ const Payment = () => {
   return (
     <ScrollView style={{ marginVertical: 40 }}>
       <NavbarAfterLogin />
+      <View style={{  backgroundColor: "#F5F6F8" }}>
+        <View style={{borderBottomRadius: 20, backgroundColor: 'white', flexDirection: "row", paddingHorizontal: 30, paddingVertical: 15}}>
+
+        <Text style={{ flex: 1, fontSize: 24, color: '#AAAAAA' }}>Total Payment</Text>
+        <Text style={{ fontSize: 24, color: "#1b30cf" }}>$30</Text>
+        </View>
+      </View>
       <View style={{ paddingHorizontal: 30, paddingVertical: 50, backgroundColor: "#F5F6F8" }}>
         <Text style={{ fontSize: 22, color: "#14142B", marginBottom: 20 }}>Payment Method</Text>
         <View style={{ backgroundColor: "white", padding: 20, paddingVertical: 40, borderRadius: 16, marginBottom: 30 }}>
@@ -64,53 +71,31 @@ const Payment = () => {
         <View style={{ backgroundColor: "white", padding: 20, borderRadius: 16 }}>
           <View style={{ marginBottom: 20 }}>
             <Text style={{ fontSize: 19, color: "#4E4B66", marginBottom: 10 }}>Full Name</Text>
-            <TextInput placeholder="Jonas El Rodriguez" style={{ flex: 1, height: 50, borderWidth: 1, borderColor: "#DEDEDE", paddingHorizontal: 15, fontSize: 18,  borderRadius: 12 }} name="fullName" />
-          </View>
-        
-          <View style={{ marginBottom: 20 }}>
-            <Text style={{ fontSize: 19, color: "#4E4B66", marginBottom: 10 }}>Email</Text>
-            <TextInput placeholder="jonasrodri123@gmail.com" style={{ flex: 1, height: 50, borderWidth: 1, borderColor: "#DEDEDE", paddingHorizontal: 15, fontSize: 18,  borderRadius: 12 }} name="email" />
-          </View>
-          
-          <View style={{ marginBottom: 20 }}>
-            <Text style={{ fontSize: 19, color: "#4E4B66", marginBottom: 10 }}>Phone Number</Text>
-            <TextInput placeholder="81445687121" style={{ flex: 1, height: 50, borderWidth: 1, borderColor: "#DEDEDE", paddingHorizontal: 15, fontSize: 18,  borderRadius: 12 }} name="email" />
+            <TextInput placeholder="Jonas El Rodriguez" style={{ flex: 1, height: 50, borderWidth: 1, borderColor: "#DEDEDE", paddingHorizontal: 15, fontSize: 18, borderRadius: 12 }} name="fullName" />
           </View>
 
-          <View style={{ flex: 1, height: 50, paddingHorizontal: 15, borderRadius: 12, flexDirection: 'row', alignItems: 'center', backgroundColor: 'rgba(244, 183, 64, 0.3)' }} >
-            <Icon style={{fontSize: 19, marginHorizontal: 10}} name='exclamation-triangle'/>
-            <Text style={{fontSize: 19, color: '#4E4B66'}}>Fill your data correctly.</Text>
+          <View style={{ marginBottom: 20 }}>
+            <Text style={{ fontSize: 19, color: "#4E4B66", marginBottom: 10 }}>Email</Text>
+            <TextInput placeholder="jonasrodri123@gmail.com" style={{ flex: 1, height: 50, borderWidth: 1, borderColor: "#DEDEDE", paddingHorizontal: 15, fontSize: 18, borderRadius: 12 }} name="email" />
+          </View>
+
+          <View style={{ marginBottom: 20 }}>
+            <Text style={{ fontSize: 19, color: "#4E4B66", marginBottom: 10 }}>Phone Number</Text>
+            <TextInput placeholder="81445687121" style={{ flex: 1, height: 50, borderWidth: 1, borderColor: "#DEDEDE", paddingHorizontal: 15, fontSize: 18, borderRadius: 12 }} name="email" />
+          </View>
+
+          <View style={{ flex: 1, height: 50, paddingHorizontal: 15, borderRadius: 12, flexDirection: "row", alignItems: "center", backgroundColor: "rgba(244, 183, 64, 0.3)" }}>
+            <Icon style={{ fontSize: 19, marginHorizontal: 10 }} name="exclamation-triangle" />
+            <Text style={{ fontSize: 19, color: "#4E4B66" }}>Fill your data correctly.</Text>
           </View>
         </View>
 
         <View>
-            <TouchableOpacity style={{backgroundColor: '#1b30cf', padding: 12, alignItems: 'center', borderRadius: 16, marginTop: 30, }}>
-                <Text style={{  fontSize: 18, color: 'white' }}>Checkout now</Text>
-            </TouchableOpacity>
+          <TouchableOpacity style={{ backgroundColor: "#1b30cf", padding: 12, alignItems: "center", borderRadius: 16, marginTop: 30 }}>
+            <Text style={{ fontSize: 18, color: "white" }}>Checkout now</Text>
+          </TouchableOpacity>
         </View>
       </View>
-
-
-      {/* <View style={{ backgroundColor: "white", paddingVertical: 25, borderRadius: 12, marginBottom: 10, marginHorizontal: 10 }}>
-          <View style={{ marginBottom: 15 }}>
-            <View style={{marginBottom: 20}}>
-              <Image source={require("../../assets/cineOne.png")} />
-            </View>
-            <Text style={{ flex: 1, fontSize: 16, color: "#6B6B6B", marginBottom: 10 }}>Tuesday, 07 July 2020 - 04:30pm</Text>
-            <Text style={{ fontSize: 20 }}>Spider-Man: Homecoming</Text>
-          </View>
-
-          
-
-          <View style={{ borderBottomWidth: 1, borderColor: "#E6E6E6" }} />
-
-          <View>
-              <TouchableOpacity style={{ backgroundColor: "#1b30cf", alignItems: "center", borderRadius: 4, padding: 10 }}>
-                <Text style={{ color: "white" }}>Ticket in active</Text>
-              </TouchableOpacity>
-            </View>
-        </View> */}
-
 
       <Footer />
     </ScrollView>

@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, Image, TouchableOpacity } from "react-native";
+import { View, Text, Image, TouchableOpacity, ScrollView } from "react-native";
 import Month from "./Month";
 
 const UpcomingMovies = () => {
@@ -10,23 +10,26 @@ const UpcomingMovies = () => {
         <Text style={{ color: "#1b30cf", fontSize: 18 }}>view all</Text>
       </View>
 
-      <View style={{ flexDirection: "row", alignItems: "center", flexWrap: "nowrap", overflowX: "scroll", marginBottom: 20,}}>
-        <Month month='September'/>
-        <Month month='October'/>
-        <Month month='November'/>
-        <Month month='December'/>
-        <Month month='January'/>
-        <Month month='February'/>
-        <Month month='March'/>
-        <Month month='April'/>
-        <Month month='May'/>
-        <Month month='June'/>
-        <Month month='July'/>
-        <Month month='August'/>
-      </View>
+      <ScrollView horizontal>
+        <View style={{ flexDirection: "row", alignItems: "center", flexWrap: "nowrap", overflowX: "scroll", marginBottom: 20 }}>
+          <Month month="September" />
+          <Month month="October" />
+          <Month month="November" />
+          <Month month="December" />
+          <Month month="January" />
+          <Month month="February" />
+          <Month month="March" />
+          <Month month="April" />
+          <Month month="May" />
+          <Month month="June" />
+          <Month month="July" />
+          <Month month="August" />
+        </View>
+      </ScrollView>
+
+      <ScrollView horizontal>
 
       <View style={{ flexDirection: "row", alignItems: "center", flexWrap: "nowrap", overflowX: "scroll" }}>
-        
         <View style={{ padding: 15, borderWidth: 2, borderColor: "#DEDEDE", borderRadius: 6, marginRight: 15 }}>
           <View style={{ marginBottom: 10 }}>
             <Image source={require("../../assets/blackWidow.png")} style={{ width: 120, height: 185 }} />
@@ -81,6 +84,7 @@ const UpcomingMovies = () => {
           </View>
         </View>
       </View>
+      </ScrollView>
     </View>
   );
 };

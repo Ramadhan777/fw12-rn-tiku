@@ -9,6 +9,7 @@ import ListMovie from './src/screens/ListMovie';
 import MovieDetail from './src/screens/MovieDetail';
 import Order from './src/screens/Order';
 import Payment from './src/screens/Payment';
+import OrderHistory from './src/screens/OrderHistory';
 
 export default function App() {
   return (
@@ -23,6 +24,7 @@ export default function App() {
       {/* <MovieDetail /> */}
       {/* <Order /> */}
       <Payment />
+      {/* <OrderHistory /> */}
    </>
   );
 }

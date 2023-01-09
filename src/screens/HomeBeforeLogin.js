@@ -11,16 +11,16 @@ const HomeBeforeLogin = () => {
     <ScrollView style={styles.container}>
       <NavbarBeforeLogin />
       <View>
-        <View style={{marginVertical: 60, paddingLeft: 30}}>
-          <Text style={{fontSize: 19, color: '#A0A3BD'}}>Nearest Cinema, Newest Movie,</Text>
-          <Text style={{fontSize: 40, color: '#1b30cf', fontWeight: 'bold'}}>Find out now!</Text>
+        <View style={{ marginVertical: 60, paddingLeft: 30 }}>
+          <Text style={{ fontSize: 19, color: "#A0A3BD" }}>Nearest Cinema, Newest Movie,</Text>
+          <Text style={{ fontSize: 40, color: "#1b30cf", fontWeight: "bold" }}>Find out now!</Text>
         </View>
-        <View style={{marginBottom: 100}}>
-            <Image source={require('../../assets/Group13.png')} style={{ width: 373, heght: 433, marginLeft: 10}}/>
+        <View style={{ marginBottom: 100 }}>
+          <Image source={require("../../assets/Group13.png")} style={{ width: 373, heght: 433, marginLeft: 10 }} />
         </View>
       </View>
 
-      <NowShowing/>
+        <NowShowing />
 
       <UpcomingMovies />
 
