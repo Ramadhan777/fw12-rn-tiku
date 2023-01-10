@@ -21,15 +21,15 @@ const NavbarBeforeLogin = () => {
 
       {toggle && (
         <View style={{position: 'absolute', top : 70, right: 0, left:0, zIndex: 10, backgroundColor: 'white'}}>
-          <TouchableOpacity style={{ flex: 1, paddingVertical: 15, alignItems: "center", borderBottomWidth: 1, borderColor: "#DEDEDE", borderTopWidth: 1 }}>
+          <TouchableOpacity style={{ flex: 1, paddingVertical: 15, alignItems: "center", borderBottomWidth: 1, borderColor: "#DEDEDE", borderTopWidth: 1 }} onPress={() => navigation.navigate('Home')}>
             <Text style={styles.navbarText}>Home</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.navbarList}>
+          <TouchableOpacity style={styles.navbarList} onPress={() => navigation.navigate('ListMovie')}>
             <Text style={styles.navbarText}>List Movie</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.navbarList} navigation={'login'}>
+          <TouchableOpacity style={styles.navbarList} onPress={() => navigation.navigate('Login')}>
             <Text style={styles.navbarText} >Sign In</Text>
           </TouchableOpacity>
 

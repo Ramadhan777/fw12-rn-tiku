@@ -2,8 +2,12 @@ import React from "react";
 import { Text, Image, View, StyleSheet, TouchableOpacity, TextInput } from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome";
 
+import { useNavigation } from "@react-navigation/native";
+
 const NavbarAfterLogin = () => {
   const [toggle, setToggle] = React.useState(false);
+  const navigation = useNavigation()
+
 
   return (
     <View style={{ flex: 1, position: 'relative' }}>
@@ -25,19 +29,19 @@ const NavbarAfterLogin = () => {
             <TextInput style={{ flex: 1, height: 50, paddingHorizontal: 15, fontSize: 18 }} placeholder='Search..'/>
           </View>
 
-          <TouchableOpacity style={{ flex: 1, paddingVertical: 15, alignItems: "center", borderBottomWidth: 1, borderColor: "#DEDEDE", borderTopWidth: 1 }}>
-            <Text style={styles.navbarText}>Home</Text>
+          <TouchableOpacity onPress={() => navigation.navigate('HomeAfterLogin')} style={{ flex: 1, paddingVertical: 15, alignItems: "center", borderBottomWidth: 1, borderColor: "#DEDEDE", borderTopWidth: 1 }}>
+            <Text  style={styles.navbarText}>Home</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.navbarList}>
-            <Text style={styles.navbarText}>List Movie</Text>
+          <TouchableOpacity onPress={() => navigation.navigate('ListMovie')} style={styles.navbarList}>
+            <Text  style={styles.navbarText}>List Movie</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.navbarList}>
-            <Text style={styles.navbarText}>Profile</Text>
+          <TouchableOpacity onPress={() => navigation.navigate('Profile')} style={styles.navbarList}>
+            <Text  style={styles.navbarText}>Profile</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.navbarList}>
+          <TouchableOpacity onPress={() => navigation.navigate('Login')} style={styles.navbarList}>
             <Text style={styles.navbarText}>Logout</Text>
           </TouchableOpacity>
 

@@ -2,9 +2,12 @@ import React from "react";
 import { StyleSheet, Text, View, ScrollView, TextInput, TouchableOpacity } from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome";
 import HeaderLogin from "../components/HeaderLogin";
+import { useNavigation } from "@react-navigation/native";
 
 const Login = () => {
   const [isPassword, setIsPassword] = React.useState(true);
+  const navigation = useNavigation()
+
 
   return (
     <ScrollView style={styles.container}>
@@ -26,7 +29,7 @@ your registration"
         </View>
 
         <View>
-          <TouchableOpacity style={styles.inputButton}>
+          <TouchableOpacity style={styles.inputButton}  onPress={() => navigation.navigate('HomeAfterLogin')} >
             <Text style={{ color: "white", fontSize: 17 }}>Sign In</Text>
           </TouchableOpacity>
         </View>
@@ -34,7 +37,7 @@ your registration"
         <View style={{ flex: 1, alignItems: "center", marginTop: 15 }}>
           <Text style={{ fontSize: 17 }}>
            Forgot your password?{" "}
-            <Text href="" style={{ color: "#1b30cf", textDecorationLine: "underline" }}>
+            <Text  style={{ color: "#1b30cf", textDecorationLine: "underline" }} onPress={() => navigation.navigate('ForgotPassword')}>
               Reset now
             </Text>
           </Text>
@@ -43,7 +46,7 @@ your registration"
         <View style={{ flex: 1, alignItems: "center", marginTop: 15 }}>
           <Text style={{ fontSize: 17 }}>
             Don't have an account?{" "}
-            <Text href="" style={{ color: "#1b30cf", textDecorationLine: "underline" }}>
+            <Text style={{ color: "#1b30cf", textDecorationLine: "underline" }} onPress={() => navigation.navigate('Register')}>
               Sign Up
             </Text>
           </Text>

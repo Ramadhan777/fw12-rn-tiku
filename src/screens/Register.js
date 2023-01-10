@@ -2,9 +2,11 @@ import React from "react";
 import { StyleSheet, Text, View, ScrollView, TextInput, TouchableOpacity } from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome";
 import HeaderLogin from "../components/HeaderLogin";
+import { useNavigation } from "@react-navigation/native";
 
 const Register = () => {
   const [isPassword, setIsPassword] = React.useState(true);
+  const navigation = useNavigation()
 
   return (
     <ScrollView style={styles.container}>
@@ -45,7 +47,7 @@ const Register = () => {
         <View style={{ flex: 1, alignItems: "center", marginTop:15}}>
           <Text style={{fontSize: 17 }}>
             Already have account?{" "}
-            <Text href="" style={{ color: "#1b30cf", textDecorationLine: "underline" }}>
+            <Text onPress={() => navigation.navigate('Login')} style={{ color: "#1b30cf", textDecorationLine: "underline" }}>
               Sign In
             </Text>
           </Text>

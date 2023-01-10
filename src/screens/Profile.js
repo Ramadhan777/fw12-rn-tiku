@@ -4,19 +4,21 @@ import { TouchableOpacity } from "react-native";
 import NavbarAfterLogin from "../components/NavbarAfterLogin";
 import Icon from "react-native-vector-icons/Feather";
 import Footer from "../components/Footer";
+import { useNavigation } from "@react-navigation/native";
 
 const Profile = () => {
   const [show1, setShow1] = React.useState(false);
   const [show2, setShow2] = React.useState(false);
+  const navigation = useNavigation()
 
   return (
     <ScrollView style={{ marginVertical: 40 }}>
       <NavbarAfterLogin />
       <HStack justifyContent="space-between" style={{ marginHorizontal: 50, paddingTop: 15 }}>
-        <Pressable borderBottomWidth="1" paddingBottom="15" borderColor="#1b30cf">
+        <Pressable onPress={() => navigation.navigate('Profile')}  borderBottomWidth="1" paddingBottom="15" borderColor="#1b30cf">
           <Text fontSize="17">Details Account</Text>
         </Pressable>
-        <Pressable paddingBottom="15">
+        <Pressable onPress={() => navigation.navigate('OrderHistory')}  paddingBottom="15">
           <Text fontSize="17" color="#AAAAAA">
             Order History
           </Text>
@@ -43,7 +45,7 @@ const Profile = () => {
           <Stack borderBottomWidth="1" borderColor="#DEDEDE" />
 
           <Stack alignItems="center">
-            <TouchableOpacity style={{ width: 200, backgroundColor: "#1b30cf", padding: 12, alignItems: "center", borderRadius: 16, marginVertical: 25 }}>
+            <TouchableOpacity onPress={() => navigation.navigate('Login')}  style={{ width: 200, backgroundColor: "#1b30cf", padding: 12, alignItems: "center", borderRadius: 16, marginVertical: 25 }}>
               <Text style={{ fontSize: 18, color: "white" }}>Logout</Text>
             </TouchableOpacity>
           </Stack>

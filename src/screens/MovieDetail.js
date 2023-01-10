@@ -2,8 +2,11 @@ import React from "react";
 import { ScrollView, View, Text, TextInput, TouchableOpacity, Image } from "react-native";
 import NavbarAftereLogin from "../components/NavbarAfterLogin";
 import Footer from "../components/Footer";
+import { useNavigation } from "@react-navigation/native";
 
 const MovieDetail = () => {
+  const navigation = useNavigation()
+
   return (
     <ScrollView style={{ marginVertical: 40 }}>
       <NavbarAftereLogin />
@@ -125,7 +128,7 @@ const MovieDetail = () => {
             </View>
 
             <View>
-              <TouchableOpacity style={{ backgroundColor: "#1b30cf", alignItems: "center", borderRadius: 4, padding: 10 }}>
+              <TouchableOpacity onPress={() => navigation.navigate('Order')}  style={{ backgroundColor: "#1b30cf", alignItems: "center", borderRadius: 4, padding: 10 }}>
                 <Text style={{ color: "white" }}>Book now</Text>
               </TouchableOpacity>
             </View>
@@ -190,7 +193,7 @@ const MovieDetail = () => {
             </View>
 
             <View>
-              <TouchableOpacity style={{ backgroundColor: "#1b30cf", alignItems: "center", borderRadius: 4, padding: 10 }}>
+              <TouchableOpacity onPress={() => navigation.navigate('Order')}  style={{ backgroundColor: "#1b30cf", alignItems: "center", borderRadius: 4, padding: 10 }}>
                 <Text style={{ color: "white" }}>Book now</Text>
               </TouchableOpacity>
             </View>

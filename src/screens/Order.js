@@ -3,8 +3,11 @@ import { ScrollView, View, Image, Text, TouchableOpacity } from "react-native";
 import NavbarAfterLogin from "../components/NavbarAfterLogin";
 import Icon from "react-native-vector-icons/FontAwesome";
 import Footer from "../components/Footer";
+import { useNavigation } from "@react-navigation/native";
 
 const Order = () => {
+  const navigation = useNavigation()
+
   return (
     <ScrollView style={{ marginVertical: 40 }}>
       <NavbarAfterLogin />
@@ -17,9 +20,9 @@ const Order = () => {
             <View style={{ flex: 1 }}>
               {[" ", " ", " ", " ", " ", " ", " "].map((rows, i) => {
                 return (
-                  <View style={{ flexDirection: "row" }}>
+                  <View key={i} style={{ flexDirection: "row" }}>
                     {[0, 1, 2, 3, 4, 5, 6].map((num, i) => {
-                      return <TouchableOpacity style={{ width: 14, height: 14, borderRadius: 2, backgroundColor: "#D6D8E7", marginRight: 5, marginBottom: 5 }}></TouchableOpacity>;
+                      return <TouchableOpacity key={i} style={{ width: 14, height: 14, borderRadius: 2, backgroundColor: "#D6D8E7", marginRight: 5, marginBottom: 5 }}></TouchableOpacity>;
                     })}
                   </View>
                 );
@@ -29,9 +32,9 @@ const Order = () => {
             <View style={{ flex: 1, alignItems: "flex-end" }}>
               {[" ", " ", " ", " ", " ", " ", " "].map((rows, i) => {
                 return (
-                  <View style={{ flexDirection: "row" }}>
+                  <View key={i} style={{ flexDirection: "row" }}>
                     {[0, 1, 2, 3, 4, 5, 6].map((num, i) => {
-                      return <TouchableOpacity style={{ width: 14, height: 14, borderRadius: 2, backgroundColor: "#D6D8E7", marginRight: 5, marginBottom: 5 }}></TouchableOpacity>;
+                      return <TouchableOpacity key={i} style={{ width: 14, height: 14, borderRadius: 2, backgroundColor: "#D6D8E7", marginRight: 5, marginBottom: 5 }}></TouchableOpacity>;
                     })}
                   </View>
                 );
@@ -105,7 +108,7 @@ const Order = () => {
         </View>
 
         <View>
-            <TouchableOpacity style={{backgroundColor: '#1b30cf', padding: 12, alignItems: 'center', borderRadius: 16, marginTop: 30, }}>
+            <TouchableOpacity onPress={() => navigation.navigate('Payment')}  style={{backgroundColor: '#1b30cf', padding: 12, alignItems: 'center', borderRadius: 16, marginTop: 30, }}>
                 <Text style={{  fontSize: 18, color: 'white' }}>Checkout now</Text>
             </TouchableOpacity>
         </View>

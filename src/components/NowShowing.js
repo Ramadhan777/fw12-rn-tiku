@@ -1,15 +1,17 @@
 import React from "react";
 import { View, Text, Image, TouchableOpacity, ScrollView } from "react-native";
 import { Pressable } from "native-base";
+import { useNavigation } from "@react-navigation/native";
 
 const NowShowing = () => {
   const [show, setShow] = React.useState(null);
+  const navigation = useNavigation()
 
   return (
     <View style={{ paddingTop: 30, paddingHorizontal: 30, backgroundColor: "#D6D8E7", height: 380, position: "relative" }}>
       <View style={{ flexDirection: "row", alignItems: "center", marginBottom: 30 }}>
         <Text style={{ flex: 1, color: "#1b30cf", fontSize: 22, fontWeight: "bold" }}>Now Showing</Text>
-        <Text style={{ color: "#1b30cf", fontSize: 18 }}>view all</Text>
+        <Text onPress={() => navigation.navigate('ListMovie')} style={{ color: "#1b30cf", fontSize: 18 }}>view all</Text>
       </View>
 
       <ScrollView horizontal style={{ position: "absolute", top: 80, left: 30 }}>
@@ -38,7 +40,7 @@ const NowShowing = () => {
                   </View>
 
                   <View>
-                    <TouchableOpacity style={{ borderWidth: 1, borderColor: "#1b30cf", alignItems: "center", borderRadius: 4, paddingVertical: 5 }}>
+                    <TouchableOpacity onPress={() => navigation.navigate('MovieDetail')}  style={{ borderWidth: 1, borderColor: "#1b30cf", alignItems: "center", borderRadius: 4, paddingVertical: 5 }}>
                       <Text style={{ color: "#1b30cf", fontSize: 16 }}>Details</Text>
                     </TouchableOpacity>
                   </View>
@@ -66,7 +68,7 @@ const NowShowing = () => {
                   </View>
 
                   <View>
-                    <TouchableOpacity style={{ borderWidth: 1, borderColor: "#1b30cf", alignItems: "center", borderRadius: 4, paddingVertical: 5 }}>
+                    <TouchableOpacity onPress={() => navigation.navigate('MovieDetail')}  style={{ borderWidth: 1, borderColor: "#1b30cf", alignItems: "center", borderRadius: 4, paddingVertical: 5 }}>
                       <Text style={{ color: "#1b30cf" }}>Details</Text>
                     </TouchableOpacity>
                   </View>
@@ -94,7 +96,7 @@ const NowShowing = () => {
                   </View>
 
                   <View>
-                    <TouchableOpacity style={{ borderWidth: 1, borderColor: "#1b30cf", alignItems: "center", borderRadius: 4, paddingVertical: 5 }}>
+                    <TouchableOpacity onPress={() => navigation.navigate('MovieDetail')}  style={{ borderWidth: 1, borderColor: "#1b30cf", alignItems: "center", borderRadius: 4, paddingVertical: 5 }}>
                       <Text style={{ color: "#1b30cf" }}>Details</Text>
                     </TouchableOpacity>
                   </View>

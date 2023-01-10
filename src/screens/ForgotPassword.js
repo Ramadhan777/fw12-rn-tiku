@@ -2,8 +2,11 @@ import React from "react";
 import { StyleSheet, Text, View, ScrollView, TextInput, TouchableOpacity } from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome";
 import HeaderLogin from "../components/HeaderLogin";
+import { useNavigation } from "@react-navigation/native";
 
 const ForgotPassword = () => {
+  const navigation = useNavigation()
+
   return (
     <ScrollView style={styles.container}>
       <HeaderLogin
@@ -17,7 +20,7 @@ const ForgotPassword = () => {
         </View>
 
         <View>
-          <TouchableOpacity style={styles.inputButton}>
+          <TouchableOpacity style={styles.inputButton} onPress={() => navigation.navigate('ResetPassword')}>
             <Text style={{ color: "white", fontSize: 17 }}>Send</Text>
           </TouchableOpacity>
         </View>
