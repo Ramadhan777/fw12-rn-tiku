@@ -3,7 +3,7 @@ import { View, Text, TextInput, TouchableOpacity } from "react-native";
 
 const EmailBox = () => {
   return (
-    <View style={{ flex: 1, marginVertical: 30, paddingVertical: 30, paddingHorizontal: 30, marginHorizontal: 20, borderRadius: 8, boxShadow: "0 8 16 rgba(186, 186, 186, 0.15)", borderWidth: 1 }}>
+    <View style={{ flex: 1, marginVertical: 30, paddingVertical: 30, paddingHorizontal: 30, marginHorizontal: 20, borderRadius: 12, borderWidth: 1, borderColor: "#AAAAAA" }}>
       <View style={{ alignItems: "center", marginBottom: 25 }}>
         <Text style={{ fontSize: 21, color: "#4E4B66" }}>Be the vanguard of the</Text>
         <Text style={{ fontSize: 43, color: "#1b30cf", fontWeight: "bold" }}>Moviegoers</Text>

@@ -1,11 +1,13 @@
 import React from "react";
 import { Text, Image, View, StyleSheet, TouchableOpacity } from "react-native";
+import {useNavigation} from '@react-navigation/native'
 
 const NavbarBeforeLogin = () => {
   const [toggle, setToggle] = React.useState(false);
+  const navigation = useNavigation()
 
   return (
-    <View style={{ flex: 1, position: 'relative' }}>
+    <View style={{ flex: 1 }}>
       <View style={styles.navbarContainer}>
         <View style={styles.navbarImage}>
           <Image source={require("../../assets/Tiku.jpg")} style={{ width: 125, height: 50}} />
@@ -27,8 +29,8 @@ const NavbarBeforeLogin = () => {
             <Text style={styles.navbarText}>List Movie</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.navbarList}>
-            <Text style={styles.navbarText}>Sign In</Text>
+          <TouchableOpacity style={styles.navbarList} navigation={'login'}>
+            <Text style={styles.navbarText} >Sign In</Text>
           </TouchableOpacity>
 
           <View style={{ flex: 1, paddingVertical: 15, alignItems: "center" }}>

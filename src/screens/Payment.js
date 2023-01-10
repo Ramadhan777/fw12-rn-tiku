@@ -9,13 +9,13 @@ const Payment = () => {
     <ScrollView style={{ marginVertical: 40 }}>
       <NavbarAfterLogin />
       <View style={{  backgroundColor: "#F5F6F8" }}>
-        <View style={{borderBottomRadius: 20, backgroundColor: 'white', flexDirection: "row", paddingHorizontal: 30, paddingVertical: 15}}>
+        <View style={{borderBottomLeftRadius: 20,borderBottomRightRadius: 20, backgroundColor: 'white', flexDirection: "row", paddingHorizontal: 30, paddingVertical: 15}}>
 
         <Text style={{ flex: 1, fontSize: 24, color: '#AAAAAA' }}>Total Payment</Text>
         <Text style={{ fontSize: 24, color: "#1b30cf" }}>$30</Text>
         </View>
       </View>
-      <View style={{ paddingHorizontal: 30, paddingVertical: 50, backgroundColor: "#F5F6F8" }}>
+      <View style={{ paddingHorizontal: 30, paddingVertical: 40, backgroundColor: "#F5F6F8" }}>
         <Text style={{ fontSize: 22, color: "#14142B", marginBottom: 20 }}>Payment Method</Text>
         <View style={{ backgroundColor: "white", padding: 20, paddingVertical: 40, borderRadius: 16, marginBottom: 30 }}>
           <View style={{ flexDirection: "row", flexWrap: "wrap" }}>

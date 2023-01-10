@@ -4,7 +4,7 @@ import Month from "./Month";
 
 const UpcomingMovies = () => {
   return (
-    <View style={{ marginVartical: 30, paddingHorizontal: 30, paddingVertical: 30 }}>
+    <View style={{ paddingHorizontal: 30, marginVertical: 50 }}>
       <View style={{ flexDirection: "row", alignItems: "center", marginBottom: 20 }}>
         <Text style={{ flex: 1, fontSize: 22, fontWeight: "bold" }}>Upcoming Movies</Text>
         <Text style={{ color: "#1b30cf", fontSize: 18 }}>view all</Text>
@@ -41,7 +41,7 @@ const UpcomingMovies = () => {
             </View>
 
             <View>
-              <TouchableOpacity style={{ borderWidth: 1, borderColor: "#DEDEDE", alignItems: "center", borderRadius: 4, paddingVertical: 5 }}>
+              <TouchableOpacity style={{ borderWidth: 1, borderColor: "#1b30cf", alignItems: "center", borderRadius: 4, paddingVertical: 5 }}>
                 <Text style={{ color: "#1b30cf" }}>Details</Text>
               </TouchableOpacity>
             </View>
@@ -59,7 +59,7 @@ const UpcomingMovies = () => {
             </View>
 
             <View>
-              <TouchableOpacity style={{ borderWidth: 1, borderColor: "#DEDEDE", alignItems: "center", borderRadius: 4, paddingVertical: 5 }}>
+              <TouchableOpacity style={{ borderWidth: 1,borderColor: "#1b30cf", alignItems: "center", borderRadius: 4, paddingVertical: 5 }}>
                 <Text style={{ color: "#1b30cf" }}>Details</Text>
               </TouchableOpacity>
             </View>
@@ -77,7 +77,7 @@ const UpcomingMovies = () => {
             </View>
 
             <View>
-              <TouchableOpacity style={{ borderWidth: 1, borderColor: "#DEDEDE", alignItems: "center", borderRadius: 4, paddingVertical: 5 }}>
+              <TouchableOpacity style={{ borderWidth: 1, borderColor: "#1b30cf", alignItems: "center", borderRadius: 4, paddingVertical: 5 }}>
                 <Text style={{ color: "#1b30cf" }}>Details</Text>
               </TouchableOpacity>
             </View>

@@ -22,20 +22,22 @@ const ListMovie = () => {
             </View>
           </View>
 
-          <View style={{ flexDirection: "row", alignItems: "center", flexWrap: "nowrap", overflowX: "scroll", marginTop: 15 }}>
-            <Month month="September" />
-            <Month month="October" />
-            <Month month="November" />
-            <Month month="December" />
-            <Month month="January" />
-            <Month month="February" />
-            <Month month="March" />
-            <Month month="April" />
-            <Month month="May" />
-            <Month month="June" />
-            <Month month="July" />
-            <Month month="August" />
-          </View>
+          <ScrollView horizontal>
+            <View style={{ flexDirection: "row", alignItems: "center", flexWrap: "nowrap", overflowX: "scroll", marginTop: 15 }}>
+              <Month month="September" />
+              <Month month="October" />
+              <Month month="November" />
+              <Month month="December" />
+              <Month month="January" />
+              <Month month="February" />
+              <Month month="March" />
+              <Month month="April" />
+              <Month month="May" />
+              <Month month="June" />
+              <Month month="July" />
+              <Month month="August" />
+            </View>
+          </ScrollView>
         </View>
 
         <View style={{ flexDirection: "row", marginTop: 30, flexWrap: "wrap", justifyContent: "center", alignItems: "center" }}>
@@ -111,28 +113,27 @@ const ListMovie = () => {
           </View>
         </View>
 
-        <View style={{flexDirection: 'row', justifyContent: 'center', marginTop: 10}}>
-          <View style={{marginRight:10}}>
+        <View style={{ flexDirection: "row", justifyContent: "center", marginTop: 10 }}>
+          <View style={{ marginRight: 10 }}>
             <TouchableOpacity style={{ backgroundColor: "white", padding: 10, borderRadius: 8 }}>
-              <Text style={{fontSize: 17}}>1</Text>
+              <Text style={{ fontSize: 17 }}>1</Text>
             </TouchableOpacity>
           </View>
-          <View style={{marginRight:10}}>
+          <View style={{ marginRight: 10 }}>
             <TouchableOpacity style={{ backgroundColor: "white", padding: 10, borderRadius: 8 }}>
-              <Text style={{fontSize: 17}}>2</Text>
+              <Text style={{ fontSize: 17 }}>2</Text>
             </TouchableOpacity>
           </View>
-          <View style={{marginRight:10}}>
+          <View style={{ marginRight: 10 }}>
             <TouchableOpacity style={{ backgroundColor: "white", padding: 10, borderRadius: 8 }}>
-              <Text style={{fontSize: 17}}>3</Text>
+              <Text style={{ fontSize: 17 }}>3</Text>
             </TouchableOpacity>
           </View>
-          <View style={{marginRight:10}}>
+          <View style={{ marginRight: 10 }}>
             <TouchableOpacity style={{ backgroundColor: "white", padding: 10, borderRadius: 8 }}>
-              <Text style={{fontSize: 17}}>4</Text>
+              <Text style={{ fontSize: 17 }}>4</Text>
             </TouchableOpacity>
           </View>
-
         </View>
       </View>
 
