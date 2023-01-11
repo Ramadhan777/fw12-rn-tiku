@@ -1,15 +1,19 @@
 import React from "react";
 import { ScrollView, View, Text, TextInput, TouchableOpacity, Image } from "react-native";
-import NavbarAftereLogin from "../components/NavbarAfterLogin";
+import { Select, Pressable } from "native-base";
+import NavbarAfterLogin from "../components/NavbarAfterLogin";
 import Footer from "../components/Footer";
 import { useNavigation } from "@react-navigation/native";
+// import {DatePicker} from "react-native-date-picker";
 
 const MovieDetail = () => {
-  const navigation = useNavigation()
+  const navigation = useNavigation();
+  const [date, setDate] = React.useState(new Date());
+  const [dateView, setDateView] = React.useState(false);
 
   return (
     <ScrollView style={{ marginVertical: 40 }}>
-      <NavbarAftereLogin />
+      <NavbarAfterLogin />
       <View style={{ marginHorizontal: 30, marginVertical: 30 }}>
         <View style={{ alignItems: "center", marginBottom: 30 }}>
           <View style={{ padding: 20, borderWidth: 1, borderColor: "#DEDEDE", borderRadius: 8 }}>
@@ -60,11 +64,40 @@ const MovieDetail = () => {
       <View style={{ backgroundColor: "#F5F6F8", paddingVertical: 40, paddingHorizontal: 30 }}>
         <View style={{ marginBottom: 30 }}>
           <Text style={{ fontSize: 24, fontWeight: "bold", textAlign: "center" }}>Showtime and Tickets</Text>
-          <View style={{ alignItems: "center", marginTop: 20, backgroundColor: "#EFF0F6", marginHorizontal: 20, height: 40, justifyContent: "center" }}>
-            <TextInput style={{ fontSize: 17 }} placeholder="Set a day" />
+          {/* <View>
+            <Pressable onPress={() => setDateView(true)} style={{ alignItems: "center", marginTop: 10, backgroundColor: "#EFF0F6", marginHorizontal: 20, height: 40, justifyContent: "center" }}>
+              <Text style={{ fontSize: 17 }}>Set a day</Text>
+            </Pressable>
+            <DatePicker
+              modal
+              open={dateView}
+              date={date}
+              onConfirm={(newDate) => {
+                setDate(newDate);
+                setDateView(false);
+              }}
+              onCancel={() => {
+                setDateView(false);
+              }}
+            />
+          </View> */}
+          <View style={{ alignItems: "center", marginTop: 20, backgroundColor: "#EFF0F6", marginHorizontal: 20, height: 40 }}>
+            <Select px="10" fontSize="16" accessibilityLabel="Set a day" width="full" height="10" placeholder="Set a city" borderColor="0" onValueChange={(itemValue) => setGenre(itemValue)}>
+              <Select.Item label="Purwokerto" value="Purwokerto" />
+              <Select.Item label="Jakarta" value="Jakarta" />
+              <Select.Item label="Bandung" value="Bandung" />
+              <Select.Item label="Bogor" value="Bogor" />
+              <Select.Item label="Surabaya" value="Surabaya" />
+            </Select>
           </View>
-          <View style={{ alignItems: "center", marginTop: 10, backgroundColor: "#EFF0F6", marginHorizontal: 20, height: 40, justifyContent: "center" }}>
-            <TextInput style={{ fontSize: 17 }} placeholder="Set a day" />
+          <View style={{ alignItems: "center", marginTop: 20, backgroundColor: "#EFF0F6", marginHorizontal: 20, height: 40 }}>
+            <Select px="10" fontSize="16" accessibilityLabel="Set a city" width="full" height="10" placeholder="Set a city" borderColor="0" onValueChange={(itemValue) => setGenre(itemValue)}>
+              <Select.Item label="Purwokerto" value="Purwokerto" />
+              <Select.Item label="Jakarta" value="Jakarta" />
+              <Select.Item label="Bandung" value="Bandung" />
+              <Select.Item label="Bogor" value="Bogor" />
+              <Select.Item label="Surabaya" value="Surabaya" />
+            </Select>
           </View>
         </View>
 
@@ -128,7 +161,7 @@ const MovieDetail = () => {
             </View>
 
             <View>
-              <TouchableOpacity onPress={() => navigation.navigate('Order')}  style={{ backgroundColor: "#1b30cf", alignItems: "center", borderRadius: 4, padding: 10 }}>
+              <TouchableOpacity onPress={() => navigation.navigate("Order")} style={{ backgroundColor: "#1b30cf", alignItems: "center", borderRadius: 4, padding: 10 }}>
                 <Text style={{ color: "white" }}>Book now</Text>
               </TouchableOpacity>
             </View>
@@ -193,18 +226,18 @@ const MovieDetail = () => {
             </View>
 
             <View>
-              <TouchableOpacity onPress={() => navigation.navigate('Order')}  style={{ backgroundColor: "#1b30cf", alignItems: "center", borderRadius: 4, padding: 10 }}>
+              <TouchableOpacity onPress={() => navigation.navigate("Order")} style={{ backgroundColor: "#1b30cf", alignItems: "center", borderRadius: 4, padding: 10 }}>
                 <Text style={{ color: "white" }}>Book now</Text>
               </TouchableOpacity>
             </View>
           </View>
         </View>
 
-        <View style={{marginVertical: 20}}>
+        <View style={{ marginVertical: 20 }}>
           <View style={{ borderBottomWidth: 1, borderColor: "#DEDEDE" }}></View>
           <View style={{ flexDirection: "row", justifyContent: "center" }}>
             <TouchableOpacity style={{ backgroundColor: "#F5F6F8", paddingHorizontal: 20, marginTop: -10 }}>
-              <Text style={{color: "#1b30cf",}}>view more</Text>
+              <Text style={{ color: "#1b30cf" }}>view more</Text>
             </TouchableOpacity>
           </View>
         </View>

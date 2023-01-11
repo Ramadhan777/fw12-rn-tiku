@@ -5,11 +5,18 @@ import NavbarAfterLogin from "../components/NavbarAfterLogin";
 import Icon from "react-native-vector-icons/Feather";
 import Footer from "../components/Footer";
 import { useNavigation } from "@react-navigation/native";
+import { useDispatch } from "react-redux";
+import { logout as logoutAction } from "../redux/reducers/auth";
 
 const Profile = () => {
   const [show1, setShow1] = React.useState(false);
   const [show2, setShow2] = React.useState(false);
   const navigation = useNavigation()
+  const dispatch = useDispatch()
+
+  const logout = () => {
+    dispatch(logoutAction())
+  }
 
   return (
     <ScrollView style={{ marginVertical: 40 }}>
@@ -45,7 +52,7 @@ const Profile = () => {
           <Stack borderBottomWidth="1" borderColor="#DEDEDE" />
 
           <Stack alignItems="center">
-            <TouchableOpacity onPress={() => navigation.navigate('Login')}  style={{ width: 200, backgroundColor: "#1b30cf", padding: 12, alignItems: "center", borderRadius: 16, marginVertical: 25 }}>
+            <TouchableOpacity onPress={logout}  style={{ width: 200, backgroundColor: "#1b30cf", padding: 12, alignItems: "center", borderRadius: 16, marginVertical: 25 }}>
               <Text style={{ fontSize: 18, color: "white" }}>Logout</Text>
             </TouchableOpacity>
           </Stack>

@@ -1,12 +1,14 @@
 import React from "react";
 import { ScrollView, View, Text, Image, TouchableOpacity, TextInput } from "react-native";
+import { Select, CheckIcon } from "native-base";
 import NavbarAfterLogin from "../components/NavbarAfterLogin";
 import Month from "../components/Month";
 import Footer from "../components/Footer";
 import { useNavigation } from "@react-navigation/native";
 
 const ListMovie = () => {
-   const navigation = useNavigation()
+  const navigation = useNavigation();
+  const [genre, setGenre] = React.useState("");
 
   return (
     <ScrollView style={{ marginVertical: 40 }}>
@@ -17,10 +19,24 @@ const ListMovie = () => {
           <Text style={{ fontSize: 22, fontWeight: "bold" }}>List Movie</Text>
 
           <View style={{ flexDirection: "row", width: 300, marginTop: 15 }}>
-            <View style={{ flex: 1 }}>
-              <TextInput style={{ padding: 5, paddingLeft: 10, backgroundColor: "white", borderWidth: 1, borderColor: "#DEDEDE", borderRadius: 16 }} placeholder="Sort" />
+            <View style={{ flex: 1, backgroundColor: "white", marginRight:10,borderRadius: 16  }}>
+              <Select
+                selectedValue={genre}
+                accessibilityLabel="Sort"
+                width="full"
+                height="10"
+                placeholder="Sort"
+                borderRadius='16'
+                onValueChange={(itemValue) => setGenre(itemValue)}
+              >
+                <Select.Item label="Action" value="Action" />
+                <Select.Item label="Drama" value="Drama" />
+                <Select.Item label="Adventure" value="Adventure" />
+                <Select.Item label="Family" value="Family" />
+                <Select.Item label="Comedy" value="backend" />
+              </Select>
             </View>
-            <View style={{ flex: 3 }}>
+            <View style={{ flex: 2 }}>
               <TextInput style={{ padding: 5, paddingLeft: 10, backgroundColor: "white", borderWidth: 1, borderColor: "#DEDEDE", borderRadius: 16 }} placeholder="Search Movie Name ..." />
             </View>
           </View>
@@ -55,7 +71,7 @@ const ListMovie = () => {
               </View>
 
               <View>
-                <TouchableOpacity onPress={() => navigation.navigate('MovieDetail')}  style={{ borderWidth: 1, borderColor: "#1b30cf", alignItems: "center", borderRadius: 4, paddingVertical: 5 }}>
+                <TouchableOpacity onPress={() => navigation.navigate("MovieDetail")} style={{ borderWidth: 1, borderColor: "#1b30cf", alignItems: "center", borderRadius: 4, paddingVertical: 5 }}>
                   <Text style={{ color: "#1b30cf" }}>Details</Text>
                 </TouchableOpacity>
               </View>
@@ -73,7 +89,7 @@ const ListMovie = () => {
               </View>
 
               <View>
-                <TouchableOpacity onPress={() => navigation.navigate('MovieDetail')}  style={{ borderWidth: 1, borderColor: "#1b30cf", alignItems: "center", borderRadius: 4, paddingVertical: 5 }}>
+                <TouchableOpacity onPress={() => navigation.navigate("MovieDetail")} style={{ borderWidth: 1, borderColor: "#1b30cf", alignItems: "center", borderRadius: 4, paddingVertical: 5 }}>
                   <Text style={{ color: "#1b30cf" }}>Details</Text>
                 </TouchableOpacity>
               </View>
@@ -90,7 +106,7 @@ const ListMovie = () => {
               </View>
 
               <View>
-                <TouchableOpacity onPress={() => navigation.navigate('MovieDetail')}  style={{ borderWidth: 1, borderColor: "#1b30cf", alignItems: "center", borderRadius: 4, paddingVertical: 5 }}>
+                <TouchableOpacity onPress={() => navigation.navigate("MovieDetail")} style={{ borderWidth: 1, borderColor: "#1b30cf", alignItems: "center", borderRadius: 4, paddingVertical: 5 }}>
                   <Text style={{ color: "#1b30cf" }}>Details</Text>
                 </TouchableOpacity>
               </View>
@@ -108,7 +124,7 @@ const ListMovie = () => {
               </View>
 
               <View>
-                <TouchableOpacity onPress={() => navigation.navigate('MovieDetail')}  style={{ borderWidth: 1, borderColor: "#1b30cf", alignItems: "center", borderRadius: 4, paddingVertical: 5 }}>
+                <TouchableOpacity onPress={() => navigation.navigate("MovieDetail")} style={{ borderWidth: 1, borderColor: "#1b30cf", alignItems: "center", borderRadius: 4, paddingVertical: 5 }}>
                   <Text style={{ color: "#1b30cf" }}>Details</Text>
                 </TouchableOpacity>
               </View>

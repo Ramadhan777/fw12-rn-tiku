@@ -6,18 +6,17 @@ import { logout as logoutAction } from "../redux/reducers/auth";
 
 import { useNavigation } from "@react-navigation/native";
 
-const NavbarAfterLogin = () => {
+const NavbarAdmin = () => {
   const [toggle, setToggle] = React.useState(false);
-  const navigation = useNavigation();
-  const dispatch = useDispatch();
-
+  const navigation = useNavigation()
+  const dispatch = useDispatch()
+  
   const logout = () => {
-    dispatch(logoutAction());
-    navigation.navigate('Home')
-  };
+    dispatch(logoutAction())
+  }
 
   return (
-    <View style={{ flex: 1, position: "relative" }}>
+    <View style={{ flex: 1, position: 'relative' }}>
       <View style={styles.navbarContainer}>
         <View style={styles.navbarImage}>
           <Image source={require("../../assets/Tiku.jpg")} style={{ width: 125, height: 50, marginLeft: 30 }} />
@@ -30,22 +29,26 @@ const NavbarAfterLogin = () => {
       </View>
 
       {toggle && (
-        <View style={{ position: "absolute", top: 70, right: 0, left: 0, zIndex: 10, backgroundColor: "white" }}>
-          <View style={{ flex: 1, marginHorizontal: 30, marginVertical: 30, flexDirection: "row", alignItems: "center", backgroundColor: "#FCFDFE", borderRadius: 4, borderColor: "#DEDEDE", borderWidth: 1, paddingHorizontal: 10 }}>
+        <View style={{position: 'absolute', top : 70, right: 0, left:0, zIndex: 10, backgroundColor: 'white'}}>
+        <View style={{ flex: 1, marginHorizontal: 30, marginVertical: 30, flexDirection: "row", alignItems: "center", backgroundColor: "#FCFDFE", borderRadius: 4, borderColor: "#DEDEDE", borderWidth: 1, paddingHorizontal: 10 }}>
             <Icon name="search" size={30} color="#6E7191" />
-            <TextInput style={{ flex: 1, height: 50, paddingHorizontal: 15, fontSize: 18 }} placeholder="Search.." />
+            <TextInput style={{ flex: 1, height: 50, paddingHorizontal: 15, fontSize: 18 }} placeholder='Search..'/>
           </View>
 
-          <TouchableOpacity onPress={() => navigation.navigate("HomeAfterLogin")} style={{ flex: 1, paddingVertical: 15, alignItems: "center", borderBottomWidth: 1, borderColor: "#DEDEDE", borderTopWidth: 1 }}>
-            <Text style={styles.navbarText}>Home</Text>
+          <TouchableOpacity onPress={() => navigation.navigate('Dashboard')} style={{ flex: 1, paddingVertical: 15, alignItems: "center", borderBottomWidth: 1, borderColor: "#DEDEDE", borderTopWidth: 1 }}>
+            <Text  style={styles.navbarText}>Dashboard</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity onPress={() => navigation.navigate("ListMovie")} style={styles.navbarList}>
-            <Text style={styles.navbarText}>List Movie</Text>
+          <TouchableOpacity onPress={() => navigation.navigate('ManageMovie')} style={styles.navbarList}>
+            <Text  style={styles.navbarText}>Manage Movie</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity onPress={() => navigation.navigate("Profile")} style={styles.navbarList}>
-            <Text style={styles.navbarText}>Profile</Text>
+          <TouchableOpacity onPress={() => navigation.navigate('ManageSchedule')} style={styles.navbarList}>
+            <Text  style={styles.navbarText}>Manage Schedule</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity onPress={() => navigation.navigate('Profile')} style={styles.navbarList}>
+            <Text  style={styles.navbarText}>Profile</Text>
           </TouchableOpacity>
 
           <TouchableOpacity onPress={logout} style={styles.navbarList}>
@@ -55,6 +58,7 @@ const NavbarAfterLogin = () => {
           <View style={{ flex: 1, paddingVertical: 15, alignItems: "center" }}>
             <Text style={{ fontSize: 18, color: "#6E7191" }}>© 2020 Tickitz. All Rights Reserved.</Text>
           </View>
+
         </View>
       )}
     </View>
@@ -83,4 +87,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default NavbarAfterLogin;
+export default NavbarAdmin;

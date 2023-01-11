@@ -1,15 +1,19 @@
 import React from "react";
 import { ScrollView, Image, Text, StyleSheet, View } from "react-native";
-import NavbarBeforeLogin from "../components/NavbarBeforeLogin";
+import NavbarAfterLogin from "../components/NavbarAfterLogin";
 import EmailBox from "../components/EmailBox";
 import Footer from "../components/Footer";
 import NowShowing from "../components/NowShowing";
 import UpcomingMovies from "../components/UpcomingMovies";
+import { useSelector } from "react-redux";
+import NavbarBeforeLogin from "../components/NavbarBeforeLogin";
 
-const HomeBeforeLogin = () => {
+const Home = () => {
+  const token = useSelector((state) => state.auth.token);
+
   return (
     <ScrollView style={styles.container}>
-      <NavbarBeforeLogin />
+      {token ? <NavbarAfterLogin /> : <NavbarBeforeLogin />}
       <View>
         <View style={{ marginVertical: 60, paddingLeft: 30 }}>
           <Text style={{ fontSize: 19, color: "#A0A3BD" }}>Nearest Cinema, Newest Movie,</Text>
@@ -20,7 +24,7 @@ const HomeBeforeLogin = () => {
         </View>
       </View>
 
-        <NowShowing />
+      <NowShowing />
 
       <UpcomingMovies />
 
@@ -37,4 +41,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default HomeBeforeLogin;
+export default Home;

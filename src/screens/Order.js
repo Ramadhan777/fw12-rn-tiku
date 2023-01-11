@@ -1,5 +1,6 @@
 import React from "react";
 import { ScrollView, View, Image, Text, TouchableOpacity } from "react-native";
+import { Pressable } from 'native-base'
 import NavbarAfterLogin from "../components/NavbarAfterLogin";
 import Icon from "react-native-vector-icons/FontAwesome";
 import Footer from "../components/Footer";
@@ -7,6 +8,15 @@ import { useNavigation } from "@react-navigation/native";
 
 const Order = () => {
   const navigation = useNavigation()
+  const [selectedSeat, setSelectedSeat] = React.useState([])
+
+  const selectSeat = (seatNum) => {
+    if(selectedSeat.includes(seatNum)){
+      setSelectedSeat(selectedSeat.filter(seat => seat !== seatNum))
+    } else {
+      setSelectedSeat([...selectedSeat, seatNum])
+    }
+  }
 
   return (
     <ScrollView style={{ marginVertical: 40 }}>
@@ -18,11 +28,11 @@ const Order = () => {
           <View style={{ borderBottomWidth: 5, borderColor: "#1b30cf", marginBottom: 15, borderRadius: 3 }}></View>
           <View style={{ flexDirection: "row", marginBottom: 20 }}>
             <View style={{ flex: 1 }}>
-              {[" ", " ", " ", " ", " ", " ", " "].map((rows, i) => {
+              {["A", "B", "C", "D", "E", "F", " G"].map((rows, i) => {
                 return (
                   <View key={i} style={{ flexDirection: "row" }}>
-                    {[0, 1, 2, 3, 4, 5, 6].map((num, i) => {
-                      return <TouchableOpacity key={i} style={{ width: 14, height: 14, borderRadius: 2, backgroundColor: "#D6D8E7", marginRight: 5, marginBottom: 5 }}></TouchableOpacity>;
+                    {[1, 2, 3, 4, 5, 6,7].map((num, i) => {
+                      return <Pressable key={i} onPress={() => selectSeat(rows+num)} bg={selectedSeat.includes(rows+num) ? "#1b30cf" : "#D6D8E7"}  style={{ width: 14, height: 14, borderRadius: 2, marginRight: 5, marginBottom: 5 }}></Pressable>;
                     })}
                   </View>
                 );
@@ -30,11 +40,12 @@ const Order = () => {
             </View>
 
             <View style={{ flex: 1, alignItems: "flex-end" }}>
-              {[" ", " ", " ", " ", " ", " ", " "].map((rows, i) => {
+              {["A", "B", "C", "D", "E", "F", " G"].map((rows, i) => {
                 return (
                   <View key={i} style={{ flexDirection: "row" }}>
-                    {[0, 1, 2, 3, 4, 5, 6].map((num, i) => {
-                      return <TouchableOpacity key={i} style={{ width: 14, height: 14, borderRadius: 2, backgroundColor: "#D6D8E7", marginRight: 5, marginBottom: 5 }}></TouchableOpacity>;
+                    {[8,9,10,11,12,13,14].map((num, i) => {
+                      return <Pressable key={i} onPress={() => selectSeat(rows+num)} bg={selectedSeat.includes(rows+num) ? "#1b30cf" : "#D6D8E7"} style={{ width: 14, height: 14, borderRadius: 2, marginRight: 5, marginBottom: 5 }}>
+                      </Pressable>;
                     })}
                   </View>
                 );

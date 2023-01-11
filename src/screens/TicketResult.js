@@ -10,7 +10,7 @@ const TicketResult = () => {
 
       <VStack backgroundColor="#F5F6F8" padding="30" px="12">
         <VStack style={{ backgroundColor: "white", borderTopRadius: 8, borderBottomRadius: 1, paddingVertical: 20, alignItems: "center", borderStyle: "dashed", borderBottomWidth: 1, borderColor: "#DEDEDE", position: "relative" }}>
-          <Image source={require("../../assets/qrCode.png")} />
+          <Image source={require("../../assets/qrCode.png")} alt='QR Code'/>
           <Box w="10" h="10" backgroundColor="#F5F6F8" borderRadius="20" style={{ position: "absolute", bottom: -20, left: -20 }} />
           <Box w="10" h="10" backgroundColor="#F5F6F8" borderRadius="20" style={{ position: "absolute", bottom: -20, right: -20 }} />
         </VStack>
