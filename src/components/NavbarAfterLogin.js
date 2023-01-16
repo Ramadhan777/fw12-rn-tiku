@@ -36,7 +36,7 @@ const NavbarAfterLogin = () => {
             <TextInput style={{ flex: 1, height: 50, paddingHorizontal: 15, fontSize: 18 }} placeholder="Search.." />
           </View>
 
-          <TouchableOpacity onPress={() => navigation.navigate("HomeAfterLogin")} style={{ flex: 1, paddingVertical: 15, alignItems: "center", borderBottomWidth: 1, borderColor: "#DEDEDE", borderTopWidth: 1 }}>
+          <TouchableOpacity onPress={() => navigation.navigate("Home")} style={{ flex: 1, paddingVertical: 15, alignItems: "center", borderBottomWidth: 1, borderColor: "#DEDEDE", borderTopWidth: 1 }}>
             <Text style={styles.navbarText}>Home</Text>
           </TouchableOpacity>
 

@@ -46,9 +46,9 @@ export default function Main() {
               <Stack.Screen name="ListMovie" component={ListMovie} options={{ headerShown: false }} />
               <Stack.Screen name="MovieDetail" component={MovieDetail} options={{ headerShown: false }} />
               <Stack.Screen name="Order" component={Order} options={{ headerShown: false }} />
+              <Stack.Screen name="Profile" component={Profile} options={{ headerShown: false }} />
               <Stack.Screen name="Payment" component={Payment} options={{ headerShown: false }} />
               <Stack.Screen name="OrderHistory" component={OrderHistory} options={{ headerShown: false }} />
-              <Stack.Screen name="Profile" component={Profile} options={{ headerShown: false }} />
               <Stack.Screen name="TicketResult" component={TicketResult} options={{ headerShown: false }} />
             </>
           ) : null}

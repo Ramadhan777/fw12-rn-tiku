@@ -15,6 +15,8 @@ const NowShowing = () => {
       .then((res) => setNowShowing(res.data.results));
   }, []);
 
+ 
+
   return (
     <View style={{ paddingTop: 30, paddingHorizontal: 30, backgroundColor: "#D6D8E7", height: 380, position: "relative" }}>
       <View style={{ flexDirection: "row", alignItems: "center", marginBottom: 30 }}>
@@ -46,17 +48,20 @@ const NowShowing = () => {
                       uri: movie.picture,
                     }}
                     style={{ width: 120, height: 180 }}
+                    alt={movie.title}
                   />
                 </View>
                 {show === i ? (
                   <View style={{ width: 120 }}>
-                    <View style={{ alignItems: "center", marginBottom: 10 }}>
-                      <Text style={{ fontSize: 18, fontWeight: "bold" }}>{movie.title}</Text>
+                    <View style={{ alignItems: "center", justifyContent: 'center', marginBottom: 10, height: 80 }}>
+                      <Text style={{ textAlign: "center", fontSize: 18, fontWeight: "bold" }}>{movie.title}</Text>
                       <Text style={{ textAlign: "center", color: "#A0A3BD" }}>{movie.genre}</Text>
                     </View>
 
                     <View>
-                      <TouchableOpacity onPress={() => navigation.navigate("MovieDetail")} style={{ borderWidth: 1, borderColor: "#1b30cf", alignItems: "center", borderRadius: 4, paddingVertical: 5 }}>
+                      <TouchableOpacity onPress={() => navigation.navigate("MovieDetail", {
+                        movieId: movie.id
+                      })} style={{ borderWidth: 1, borderColor: "#1b30cf", alignItems: "center", borderRadius: 4, paddingVertical: 5 }}>
                         <Text style={{ color: "#1b30cf", fontSize: 16 }}>Details</Text>
                       </TouchableOpacity>
                     </View>

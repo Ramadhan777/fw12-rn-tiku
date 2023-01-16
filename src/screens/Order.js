@@ -5,10 +5,13 @@ import NavbarAfterLogin from "../components/NavbarAfterLogin";
 import Icon from "react-native-vector-icons/FontAwesome";
 import Footer from "../components/Footer";
 import { useNavigation } from "@react-navigation/native";
+import { chooseSeat } from "../redux/reducers/transaction";
+import { useDispatch } from "react-redux";
 
 const Order = () => {
   const navigation = useNavigation()
   const [selectedSeat, setSelectedSeat] = React.useState([])
+  const dispatch = useDispatch()
 
   const selectSeat = (seatNum) => {
     if(selectedSeat.includes(seatNum)){
@@ -16,6 +19,11 @@ const Order = () => {
     } else {
       setSelectedSeat([...selectedSeat, seatNum])
     }
+  }
+
+  const checkoutSeat = () => {
+    dispatch(chooseSeat({seatNum: selectedSeat.join(', ')}))
+    navigation.navigate('Payment')
   }
 
   return (
